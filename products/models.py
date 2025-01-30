@@ -21,7 +21,7 @@ class Product(BaseModel):
 class ProductMetaInformation(BaseModel):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, related_name='meta_info')
     product_measuring = models.CharField(max_length=100, null=True, blank=True, choices=(('kg', 'kg'), ('ML', 'ML'), ('l', 'l'), ('ml','ml'), (None, None)))
-    product_quantity = models.CharField(null=True, blank=True)
+    product_quantity = models.CharField(max_length=100, null=True, blank=True)
     is_restrict = models.BooleanField(default=False)
     restrict_quantity = models.IntegerField()
 
